@@ -24,7 +24,7 @@ module.exports = {
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#2DC026',
 
     // terminal background color
     backgroundColor: '#333',
@@ -119,10 +119,9 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyper-command-gifs',
-    'hypermaterial-vibrancy',
     'gitrocket',
-    'hyper-snazzy',
-    // 'hypertheme'
+    'hyperterm-material',
+    'hyper-transparent-bg',
   ],
 
   // in development, you can create a directory under
