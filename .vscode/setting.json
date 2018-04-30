@@ -1,0 +1,95 @@
+{
+    "diffEditor.renderSideBySide": false,
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 12,
+    "editor.formatOnSave": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "boundary",
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html",
+        "jsx": "html",
+        "tsx": "html",
+        "js": "html",
+        "ts": "html"
+    },
+    "git.enabled": true,
+    "files.trimTrailingWhitespace": true,
+    "javascript.validate.enable": false,
+    "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+    "typescript.tsserver.log": "verbose",
+    "vim.overrideCopy": false,
+    "vim.useCtrlKeys": true,
+    "vim.enableNeovim": false,
+    "window.restoreWindows": "folders",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Bluloco Dark",
+    "workbench.iconTheme": "vscode-icons",
+    // Configure glob patterns for excluding files and folders.
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/CVS": true,
+        "**/tmp": true
+    },
+
+    // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/tmp": true
+    },
+
+    // Configure glob patterns of file paths to exclude from file watching. Changing this setting requires a restart. When you experience Code consuming lots of cpu time on startup, you can exclude large folders to reduce the initial load.
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+        "**/tmp": true
+    },
+    "csv-preview.separator": "\t",
+    "csv-preview.quoteMark": "'",
+    "emmet.triggerExpansionOnTab": true,
+    "editor.snippetSuggestions": "top",
+    "typescript.npm": "/usr/local/bin/npm",
+    "workbench.colorCustomizations": {
+        // The background is optional
+        // "terminal.background": "#282a36",
+        "terminal.foreground": "#eff0eb",
+        "terminal.ansiBlack": "#282a36",
+        "terminal.ansiRed": "#ff5c57",
+        "terminal.ansiGreen": "#5af78e",
+        "terminal.ansiYellow": "#f3f99d",
+        "terminal.ansiBlue": "#57c7ff",
+        "terminal.ansiMagenta": "#ff6ac1",
+        "terminal.ansiCyan": "#9aedfe",
+        "terminal.ansiWhite": "#f1f1f0",
+        "terminal.ansiBrightBlack": "#686868",
+        "terminal.ansiBrightRed": "#ff5c57",
+        "terminal.ansiBrightGreen": "#5af78e",
+        "terminal.ansiBrightYellow": "#f3f99d",
+        "terminal.ansiBrightBlue": "#57c7ff",
+        "terminal.ansiBrightMagenta": "#ff6ac1",
+        "terminal.ansiBrightCyan": "#9aedfe",
+        "terminal.ansiBrightWhite": "#eff0eb"
+    },
+    "extensions.autoUpdate": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "tslint.jsEnable": false,
+    "tslint.alwaysShowStatus": true,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.printWidth": 100,
+    "explorer.confirmDragAndDrop": false,
+    "search.location": "sidebar",
+    "jest.autoEnable": false
+}
