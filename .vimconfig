@@ -1,25 +1,45 @@
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# phabricator settings
-export CLICOLOR=1
-export PIP_REQUIRE_VIRTUALENV=false
-export LDFLAGS="-L$(brew --prefix openssl)/lib"
-export CFLAGS="-I$(brew --prefix openssl)/include"
-export SWIG_FEATURES="-cpperraswarn -includeall -I$(brew --prefix openssl)/include"
-export BOTO_CONFIG="~/.boto"
-
-# android settings
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-alias hpm="npm --registry=https://tnt.kezaihui.com"
-alias cnpm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
-
-alias gpr="git pull --rebase"
-alias nb="npm run build"
-
-alias dict="~/Github/Command-Line-Youdao-Dictionary/dict"
-alias typora="open -a typora"
+[alias]
+    ci = commit
+    squash = rebase HEAD~2 -i
+    cia = commit --all
+    cim = commit --amend
+    co = checkout
+    crp = cherry-pick
+    d = diff
+    dfl = diff --name-status
+    dfs = diff --staged
+    dl = diff HEAD^
+    f = fetch --tags
+    g = grep -in
+    last = log -1 HEAD
+    load = stash pop
+    logg = log --graph --decorate --oneline --abbrev-commit --all --no-merges
+    logo = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    logs = log --all --graph --no-merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    mgf = merge --ff-only
+    mgo = merge -s ours
+    p = push
+    pf = push -f
+    puo = push -u origin
+    rb = rebase
+    rbc = rebase --continue
+    rh = reset --hard
+    rp = remote prune
+    save = stash
+    st = status
+    yes = log --oneline --since yesterday --pretty=format:'%Cred%h%Creset - %s' --abbrev-commit --date=relative
+    rename = "filter-branch --commit-filter 'if [ "$GIT_AUTHOR_NAME" = "johnson" ]; then export GIT_AUTHOR_NAME="johnson"; export GIT_AUTHOR_EMAIL=shijianyue@kezaihui.com; fi; git commit-tree "$@"'"
+[core]
+    editor = vim
+    pager = less -F -X
+[color]
+    ui = true
+[merge]
+    tool = vimdiff
+[push]
+    default = simple
+[credential]
+    helper = cache --timeout 36000
+[user]
+    name = Johnson
+    email = shijianyue47@gmail.com
