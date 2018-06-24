@@ -28,7 +28,8 @@
     save = stash
     st = status
     yes = log --oneline --since yesterday --pretty=format:'%Cred%h%Creset - %s' --abbrev-commit --date=relative
-    rename = "filter-branch --commit-filter 'if [ "$GIT_AUTHOR_NAME" = "johnson" ]; then export GIT_AUTHOR_NAME="johnson"; export GIT_AUTHOR_EMAIL=shijianyue@kezaihui.com; fi; git commit-tree "$@"'"
+    rna = "filter-branch --commit-filter 'if [ "$GIT_AUTHOR_NAME" = "johnson" ]; then export GIT_AUTHOR_NAME="johnson"; export GIT_AUTHOR_EMAIL=shijianyue@kezaihui.com; fi; git commit-tree "$@"'"
+    rn = commit --amend --reset-author
 [core]
     editor = vim
     pager = less -F -X
