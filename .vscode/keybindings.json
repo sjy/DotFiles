@@ -1,0 +1,30 @@
+[{
+        "key": "cmd+\\",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "shift+cmd+\\",
+        "command": "revealInExplorer",
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "git.openChange"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.compareEditor.nextChange"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.compareEditor.previousChange"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.quickSwitchWindow"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inWindowsPicker"
+    }
+]
