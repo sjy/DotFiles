@@ -1,4 +1,5 @@
 [alias]
+    br = branch
     ci = commit
     squash = rebase HEAD~2 -i
     cia = commit --all
@@ -13,9 +14,9 @@
     g = grep -in
     last = log -1 HEAD
     load = stash pop
-    logg = log --graph --decorate --oneline --abbrev-commit --all --no-merges
-    logo = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    logs = log --all --graph --no-merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    logg = log --graph --decorate --oneline --abbrev-commit --all
+    logo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    logs = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     mgf = merge --ff-only
     mgo = merge -s ours
     p = push
@@ -28,19 +29,39 @@
     save = stash
     st = status
     yes = log --oneline --since yesterday --pretty=format:'%Cred%h%Creset - %s' --abbrev-commit --date=relative
-    rna = "filter-branch --commit-filter 'if [ "$GIT_AUTHOR_NAME" = "johnson" ]; then export GIT_AUTHOR_NAME="johnson"; export GIT_AUTHOR_EMAIL=shijianyue@kezaihui.com; fi; git commit-tree "$@"'"
-    rn = commit --amend --reset-author
-[core]
-    editor = vim
+    rename = "filter-branch --commit-filter 'if [ "$GIT_AUTHOR_NAME" = "johnson" ]; then export GIT_AUTHOR_NAME="johnson"; export GIT_AUTHOR_EMAIL=shijianyue@kezaihui.com; export GIT_COMMITTER_EMAIL=shijianyue@kezaihui.com; fi; git commit-tree "$@"'"
+    dm = "!git branch --merged | egrep -v '(^\\*|master|dev)' | xargs -n 1 git branch -d"
+    dre = "!f() { git branch | egrep \"^$1*\" | xargs -n 1 git branch -D; }; f"
+[core] editor = vim
     pager = less -F -X
+	excludesfile = /Users/yueyue/.gitignore_global
 [color]
     ui = true
 [merge]
-    tool = vimdiff
+    tool = Kaleidoscope
 [push]
     default = simple
 [credential]
     helper = cache --timeout 36000
 [user]
-    name = Johnson
+    name = johnson
     email = shijianyue47@gmail.com
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[commit]
+	template = /Users/yueyue/.stCommitMsg
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
