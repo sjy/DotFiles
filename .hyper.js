@@ -42,12 +42,12 @@ module.exports = {
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
-    showHamburgerMenu: '',
+    showHamburgerMenu: false,
 
     // set to `false` if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` on windows and Linux (ignored on macOS)
-    showWindowControls: '',
+    showWindowControls: false,
 
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
@@ -86,7 +86,7 @@ module.exports = {
     //
     // Powershell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: '/usr/local/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -120,8 +120,9 @@ module.exports = {
   plugins: [
     'hyper-command-gifs',
     'gitrocket',
-    'hyperterm-material',
-    'hyper-transparent-bg',
+    'hyper-sierra-vibrancy',
+    // 'hyperterm-material',
+    // 'hyper-transparent-bg',
   ],
 
   // in development, you can create a directory under
