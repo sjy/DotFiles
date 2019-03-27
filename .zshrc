@@ -84,7 +84,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z history git vi-mode colored-man-pages)
+plugins=(z history git vi-mode colored-man-pages tmux)
 
 # User configuration
 
@@ -106,6 +106,9 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# wechat web dev tool
+export WXA_HOME="/Applications/wechatwebdevtools.app/Contents/MacOS/cli"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -122,6 +125,13 @@ alias nb="npm run build"
 
 alias dict="~/Github/Command-Line-Youdao-Dictionary/dict"
 alias typora="open -a typora"
+alias lg="lazygit"
+alias tmls="tmux ls"
+alias tma="tmux attach"
+alias rb='node ~/Desktop/js_scripts/accessExcelGrid.js'
+alias zb='node ~/Desktop/js_scripts/jira/jira_weeklyjs'
+alias dkrm='docker rm $(docker ps -a -q)'
+alias dkrmi='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -138,7 +148,6 @@ gpip() {
 # load oh-my-zsh profile and settings
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR=$HOME/.nvm
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+
