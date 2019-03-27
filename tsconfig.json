@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "jsx": "preserve",
+    "module": "esnext",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "removeComments": true,
+    "strictNullChecks": false,
+    "noUnusedLocals": false,
+    "outDir": ".ts.out",
+    "lib": ["scripthost", "es2015", "es2016", "es2017", "dom", "dom.iterable"],
+    "types": ["node", "jest"],
+    "typeRoots": ["node_modules/@types", "./typings"],
+    "baseUrl": "./",
+    "downlevelIteration": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["public", "dist", "node_modules"]
+}

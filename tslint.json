@@ -1,0 +1,11 @@
+{
+  "defaultSeverity": "warning",
+  "extends": ["@zaihui/tslint-config-base"],
+  "linterOptions": {
+    "exclude": ["**/node_modules/**", "./dist/**", "./build/**"]
+  },
+  "rules": {
+    "object-literal-shorthand": false,
+    "object-shorthand-properties-first": false
+  }
+}
